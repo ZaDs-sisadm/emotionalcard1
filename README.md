@@ -4,7 +4,7 @@
 |-------------|-------------------------------------------------|
 | Автор       | ZaDs-sisadm                                     |
 | Гілка       | `lab1`                                          |
-| Репозиторій | https://github.com/ZaDs-sisadm/emotionalcards1   |
+| Репозиторій | https://github.com/ZaDs-sisadm/emotionalcard1   |
 
 ---
 
