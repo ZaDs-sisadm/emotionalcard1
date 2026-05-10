@@ -2,13 +2,13 @@
 
 **Last updated:** May 10, 2025
 **Author / Data Controller:** ZaDs-sisadm
-**Project:** EmotionalCards (https://github.com/ZaDs-sisadm/emotionalcards)
+**Project:** EmotionalCards (https://github.com/ZaDs-sisadm/emotionalcard1)
 
 ---
 
 ## 1. Introduction
 
-This Privacy Policy explains how **EmotionalCards** ("the Application", "we", "us") collects, uses, stores, and protects personal data in compliance with the **General Data Protection Regulation (GDPR)** (EU) 2016/679.
+This Privacy Policy explains how **EmotionalCard** ("the Application", "we", "us") collects, uses, stores, and protects personal data in compliance with the **General Data Protection Regulation (GDPR)** (EU) 2016/679.
 
 By using this Application, you agree to the terms described in this Policy.
 
