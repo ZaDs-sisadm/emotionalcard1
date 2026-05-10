@@ -76,11 +76,9 @@ pytest tests/
 ```
 emotionalcard1/
 ├── components/
-│   ├── __init__.py
 │   ├── card.py           # Базовий компонент Card
 │   └── emotional_card.py # Комплексний компонент EmotionalCard
 ├── cookie_popup/
-│   ├── __init__.py
 │   └── gdpr_cookie.py    # Модуль GDPR Cookie Consent
 ├── storybook/
 │   └── storybook_app.py  # Streamlit Storybook
