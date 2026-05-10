@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>EmotionalCards — Documentation</title>
+<style>
+  :root {
+    --bg: #f8f9fa; --card: #fff; --accent: #4f9cf9;
+    --text: #222; --muted: #666; --code-bg: #f0f4f8;
+    --border: #e0e0e0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg);
+         color: var(--text); line-height: 1.7; }
+  header { background: #1e1e2e; color: #fff; padding: 32px 48px; }
+  header h1 { font-size: 2em; margin-bottom: 4px; }
+  header p  { color: #aab; font-size: 1em; }
+  nav { background: #fff; border-bottom: 1px solid var(--border);
+        padding: 0 48px; display: flex; gap: 32px; }
+  nav a { display: block; padding: 16px 0; color: var(--accent);
+          text-decoration: none; font-weight: 500; border-bottom: 3px solid transparent; }
+  nav a:hover, nav a.active { border-bottom-color: var(--accent); }
+  main { max-width: 960px; margin: 40px auto; padding: 0 24px; }
+  section { margin-bottom: 48px; }
+  h2 { font-size: 1.5em; margin-bottom: 16px; padding-bottom: 8px;
+       border-bottom: 2px solid var(--accent); }
+  h3 { font-size: 1.15em; margin: 24px 0 8px; color: #333; }
+  h4 { font-size: 1em; margin: 16px 0 4px; color: var(--muted); }
+  p  { margin-bottom: 12px; }
+  code { background: var(--code-bg); padding: 2px 6px; border-radius: 4px;
+         font-family: 'Consolas', monospace; font-size: 0.9em; }
+  pre  { background: #1e1e2e; color: #cdd6f4; padding: 20px; border-radius: 8px;
+         overflow-x: auto; margin: 12px 0 20px; font-size: 0.88em; }
+  .card { background: var(--card); border: 1px solid var(--border);
+          border-radius: 10px; padding: 24px; margin-bottom: 20px;
+          box-shadow: 0 2px 6px rgba(0,0,0,.06); }
+  .badge { display: inline-block; padding: 2px 10px; border-radius: 20px;
+           font-size: 0.78em; font-weight: 600; margin-right: 6px; }
+  .badge-blue  { background:#dbeafe; color:#1d4ed8; }
+  .badge-green { background:#dcfce7; color:#166534; }
+  .badge-gray  { background:#f3f4f6; color:#374151; }
+  table { width:100%; border-collapse: collapse; margin: 12px 0; }
+  th,td { text-align:left; padding: 10px 14px; border-bottom: 1px solid var(--border); }
+  th { background: var(--code-bg); font-weight: 600; }
+  footer { text-align:center; padding:32px; color:var(--muted); font-size:0.85em;
+           border-top:1px solid var(--border); margin-top: 48px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📖 EmotionalCards — Documentation</h1>
+  <p>Auto-generated documentation · EmotionalCards project · КОП Lab 1</p>
+</header>
+
+<nav>
+  <a href="#overview" class="active">Overview</a>
+  <a href="#card">Card</a>
+  <a href="#emotional-card">EmotionalCard</a>
+  <a href="#cookie">Cookie Consent</a>
+  <a href="#storybook">Storybook</a>
+</nav>
+
+<main>
+
+  <!-- ===== OVERVIEW ===== -->
+  <section id="overview">
+    <h2>Overview</h2>
+    <p>
+      <strong>EmotionalCards</strong> is a Python/Streamlit application for creating,
+      managing, and displaying emotional cards — visual representations of human
+      feelings and moods.
+    </p>
+    <h3>Module map</h3>
+    <div class="card">
+      <table>
+        <thead><tr><th>Module</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>components/card.py</code></td><td>Base <code>Card</code> component</td></tr>
+          <tr><td><code>components/emotional_card.py</code></td><td>Complex <code>EmotionalCard</code> + <code>Emotion</code> enum</td></tr>
+          <tr><td><code>cookie_popup/gdpr_cookie.py</code></td><td>GDPR cookie consent banner</td></tr>
+          <tr><td><code>storybook/storybook_app.py</code></td><td>Streamlit Storybook — live component explorer</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Quick start</h3>
+    <pre>pip install streamlit
+streamlit run storybook/storybook_app.py</pre>
+  </section>
+
+  <!-- ===== CARD ===== -->
+  <section id="card">
+    <h2>Card <span class="badge badge-blue">Basic Component</span></h2>
+    <p>
+      A simple, reusable card element.
+      Defined in <code>components/card.py</code>.
+    </p>
+
+    <div class="card">
+      <h3>Class: <code>Card</code></h3>
+      <h4>Constructor</h4>
+      <pre>Card(
+    title: str,
+    body: str,
+    color: str = "#ffffff",
+    text_color: str = "#333333",
+    footer: str | None = None,
+    border_radius: str = "12px",
+    elevation: int = 2,
+)</pre>
+      <h4>Parameters</h4>
+      <table>
+        <thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>title</code></td><td>str</td><td>—</td><td>Heading text</td></tr>
+          <tr><td><code>body</code></td><td>str</td><td>—</td><td>Main content text</td></tr>
+          <tr><td><code>color</code></td><td>str</td><td><code>"#ffffff"</code></td><td>Background CSS colour</td></tr>
+          <tr><td><code>text_color</code></td><td>str</td><td><code>"#333333"</code></td><td>Foreground CSS colour</td></tr>
+          <tr><td><code>footer</code></td><td>str|None</td><td><code>None</code></td><td>Optional footer text</td></tr>
+          <tr><td><code>border_radius</code></td><td>str</td><td><code>"12px"</code></td><td>CSS border-radius</td></tr>
+          <tr><td><code>elevation</code></td><td>int</td><td><code>2</code></td><td>Shadow depth (0–5)</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Methods</h4>
+      <table>
+        <thead><tr><th>Method</th><th>Returns</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>render()</code></td><td>None</td><td>Renders card in Streamlit via <code>st.markdown</code></td></tr>
+          <tr><td><code>to_dict()</code></td><td>dict</td><td>Serialises all fields to a plain dict</td></tr>
+          <tr><td><code>from_dict(data)</code></td><td>Card</td><td>Class method — creates Card from dict</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre>from components.card import Card
+
+card = Card(
+    title="Hello!",
+    body="This is a simple card.",
+    color="#e8f5e9",
+    footer="May 2025",
+    elevation=3,
+)
+card.render()</pre>
+    </div>
+  </section>
+
+  <!-- ===== EMOTIONAL CARD ===== -->
+  <section id="emotional-card">
+    <h2>EmotionalCard <span class="badge badge-green">Complex Component</span></h2>
+    <p>
+      Extends the base <code>Card</code> with emotion metadata, intensity rating, tags and interactive buttons.
+      Defined in <code>components/emotional_card.py</code>.
+    </p>
+
+    <div class="card">
+      <h3>Enum: <code>Emotion</code></h3>
+      <table>
+        <thead><tr><th>Member</th><th>Label</th><th>Emoji</th><th>Colour</th></tr></thead>
+        <tbody>
+          <tr><td><code>JOY</code></td><td>Joy</td><td>😊</td><td>#FFF9C4</td></tr>
+          <tr><td><code>SADNESS</code></td><td>Sadness</td><td>😢</td><td>#BBDEFB</td></tr>
+          <tr><td><code>ANGER</code></td><td>Anger</td><td>😡</td><td>#FFCDD2</td></tr>
+          <tr><td><code>FEAR</code></td><td>Fear</td><td>😨</td><td>#E1BEE7</td></tr>
+          <tr><td><code>SURPRISE</code></td><td>Surprise</td><td>😲</td><td>#FFE0B2</td></tr>
+          <tr><td><code>DISGUST</code></td><td>Disgust</td><td>🤢</td><td>#DCEDC8</td></tr>
+          <tr><td><code>CALM</code></td><td>Calm</td><td>😌</td><td>#B2DFDB</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>Class: <code>EmotionalCard</code></h3>
+      <h4>Constructor</h4>
+      <pre>EmotionalCard(
+    emotion: Emotion,
+    title: str,
+    body: str,
+    intensity: int = 3,
+    tags: list[str] = [],
+    timestamp: datetime = datetime.now(),
+    show_buttons: bool = True,
+    border_radius: str = "12px",
+)</pre>
+      <h4>Methods</h4>
+      <table>
+        <thead><tr><th>Method</th><th>Returns</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>render()</code></td><td>None</td><td>Renders card + optional Like/Dislike buttons</td></tr>
+          <tr><td><code>to_base_card()</code></td><td>Card</td><td>Converts to a simplified <code>Card</code> instance</td></tr>
+          <tr><td><code>to_dict()</code></td><td>dict</td><td>Serialises all fields to a plain dict</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Example</h4>
+      <pre>from components.emotional_card import EmotionalCard, Emotion
+
+ec = EmotionalCard(
+    emotion=Emotion.JOY,
+    title="Great day!",
+    body="Everything went perfectly.",
+    intensity=5,
+    tags=["sunshine", "productivity"],
+)
+ec.render()</pre>
+    </div>
+  </section>
+
+  <!-- ===== COOKIE ===== -->
+  <section id="cookie">
+    <h2>GDPR Cookie Consent <span class="badge badge-gray">Module</span></h2>
+    <p>Defined in <code>cookie_popup/gdpr_cookie.py</code>.</p>
+    <div class="card">
+      <h3>Functions</h3>
+      <table>
+        <thead><tr><th>Function</th><th>Returns</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>show_cookie_banner()</code></td><td>None</td><td>Renders GDPR banner. Shown once per session.</td></tr>
+          <tr><td><code>get_consent()</code></td><td>dict[str,bool]</td><td>Returns current consent: <code>{necessary, analytics, preferences}</code></td></tr>
+          <tr><td><code>reset_consent()</code></td><td>None</td><td>Clears stored consent; banner shows again on rerun.</td></tr>
+        </tbody>
+      </table>
+      <h4>Example</h4>
+      <pre>from cookie_popup.gdpr_cookie import show_cookie_banner, get_consent
+
+show_cookie_banner()
+
+consent = get_consent()
+if consent["analytics"]:
+    run_analytics()</pre>
+    </div>
+  </section>
+
+  <!-- ===== STORYBOOK ===== -->
+  <section id="storybook">
+    <h2>Storybook</h2>
+    <p>
+      A live Streamlit-based component explorer.
+      Run with:
+    </p>
+    <pre>streamlit run storybook/storybook_app.py</pre>
+    <div class="card">
+      <h3>Stories</h3>
+      <table>
+        <thead><tr><th>Component</th><th>Story</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>Card</td><td>Story 1 — Default</td><td>Plain card, white background, no footer</td></tr>
+          <tr><td>Card</td><td>Story 2 — Coloured</td><td>Green background with footer and elevation</td></tr>
+          <tr><td>Card</td><td>Story 3 — Interactive</td><td>All props controlled via sidebar</td></tr>
+          <tr><td>EmotionalCard</td><td>Story 1 — Joy</td><td>Positive card, intensity 4, tags, buttons</td></tr>
+          <tr><td>EmotionalCard</td><td>Story 2 — Sadness</td><td>Minimal card, no buttons, no tags</td></tr>
+          <tr><td>EmotionalCard</td><td>Story 3 — Interactive</td><td>All props controlled via sidebar</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  EmotionalCards · КОП Lab 1 · MIT License · Documentation generated with custom Python script
+</footer>
+
+</body>
+</html>
