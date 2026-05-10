@@ -74,7 +74,7 @@ pytest tests/
 ## 📁 Структура проєкту
 
 ```
-emotionalcards/
+emotionalcard1/
 ├── components/
 │   ├── __init__.py
 │   ├── card.py           # Базовий компонент Card
@@ -93,12 +93,6 @@ emotionalcards/
 ├── license-report.md
 └── README.md
 ```
-
----
-
-## 📦 Залежності
-
-Дивись [`requirements.txt`](./requirements.txt).
 
 ---
 
